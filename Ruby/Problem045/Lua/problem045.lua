@@ -10,6 +10,7 @@ function tableLength(T)
     for _ in pairs(T) do
         count = count + 1
     end
+    -- TODO: Pick a key from the table and return it as a random number.
     return count
 end
 
@@ -18,13 +19,18 @@ function rand7()
     while tableLength(collection) < 7 do
         collection[rand5()] = true
     end
-    return collection
+    -- This is just a wrapper for the actual random value.
+    -- Again, this is not supposed to be used in production.
+    pick = math.random(#collection)
+    if collection[pick] then
+        return pick
+    end
 end
 
 -- Random needs to be seeded outside of the generator function,
 -- otherwise it will be repeating the same result.
 math.randomseed(os.time())
 
-for k, v in pairs(rand7()) do
-    print(k, v)
+for i = 1, 1000, 1 do
+    print(rand7())
 end

@@ -1,11 +1,14 @@
-function rand5()
+-- You need to initialize a table for exporting the module.
+problem045 = {}
+
+local function rand5()
     return math.random(5)
 end
 
 -- The #size method only counts INTEGER values in the array.
 -- Since we're winging a set with the table data type, we need
 -- another function to properly count the elements.
-function tableLength(T)
+local function tableLength(T)
     local count = 0
     for _ in pairs(T) do
         count = count + 1
@@ -14,7 +17,7 @@ function tableLength(T)
     return count
 end
 
-function rand7()
+function problem045.rand7()
     local collection = {[6] = true, [7] = true}
     while tableLength(collection) < 7 do
         collection[rand5()] = true
@@ -31,6 +34,4 @@ end
 -- otherwise it will be repeating the same result.
 math.randomseed(os.time())
 
-for i = 1, 1000, 1 do
-    print(rand7())
-end
+return problem045

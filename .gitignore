@@ -1,1 +1,8 @@
 *.org
+
+# Elixir stuff
+Elixir/_build
+Elixir/cover
+Elixir/deps
+Elixir/erl_crash.dump
+Elixir/*.ez

@@ -1,4 +1,4 @@
-defmodule Problem45 do
+defmodule Problem045 do
   defp rand5 do
     Enum.random 1..5
   end
@@ -17,10 +17,3 @@ defmodule Problem45 do
     end
   end
 end
-
-# Test code.
-population = Enum.map(1..700000, fn x -> Problem45.rand7 end)
-nums = Enum.uniq population
-frequency = Enum.map(nums, fn x -> [number: x,
-                                    count: Enum.count(population, &(x == &1))] end)
-IO.inspect frequency

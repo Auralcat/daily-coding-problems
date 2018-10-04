@@ -6,3 +6,6 @@ Elixir/cover
 Elixir/deps
 Elixir/erl_crash.dump
 Elixir/*.ez
+
+# Javascript stuff
+node_modules

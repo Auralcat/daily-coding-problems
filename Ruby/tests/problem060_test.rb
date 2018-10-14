@@ -29,5 +29,6 @@ class Problem060Test < Minitest::Test
     target = Problem060.find_partition_general(should_work)
 
     assert target.sum == should_work.sum / 2
+    assert Problem060.find_partition_two_elems(should_work)
   end
 end
